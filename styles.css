@@ -1,0 +1,203 @@
+/* General body styles */
+body {
+    font-family: 'times new roman';
+    background: linear-gradient(to right, #030205, #372133, #49498a);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(189, 143, 251);
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'BAUHAUS 93', sans-serif;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #c8a1ff;
+}
+
+/* Home Section */
+#home {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 36px;
+    color: #ff98e5;
+}
+
+.home-container p {
+    font-size: 18px;
+}
+
+/* About Me Section */
+#about-me {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.moving-title {
+    font-size: 36px;
+    font-family: 'BAUHAUS 93', 'Times New Roman', Times, serif;
+    animation: titleMove 3s infinite;
+}
+
+@keyframes titleMove {
+    0% {
+        color: #ffffff;
+    }
+    50% {
+        color: #e19af0;
+    }
+    100% {
+        color: #333(135, 69, 194);
+    }
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #e1b3ff;
+    box-shadow: 0 0 15px 5px #8e4fda;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-text {
+    margin-top: 20px;
+    font-size: 18px;
+    width: 70%;
+    margin: 20px auto;
+}
+
+/* My Work/Hobby Section */
+#my-work {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.5s;
+}
+
+.card-front {
+    background-color: #502b3d;
+}
+
+.card-back {
+    background-color: #412243;
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+    transform: rotateY(360deg);
+}
+
+/* Contact Me Section */
+#contact-me {
+    padding: 100px 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.contact-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Infinite Scrolling Effect */
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.social-icons a {
+    animation: infiniteScroll 5s linear infinite;
+}
